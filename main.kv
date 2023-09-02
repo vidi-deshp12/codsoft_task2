@@ -1,0 +1,165 @@
+<calculator_layout>:
+    orientation: "vertical"
+
+    MDBoxLayout:
+        orientation: "vertical"
+        spacing:"10dp"
+        MDTopAppBar:
+            title: "Calculator"
+            left_action_items:[["menu"]]
+            pos_hint:{"top":1}   
+            title_color:1,1,1,1
+            left_action_items_color:1,1,1,1
+
+        NumericTextInput:
+            id: calc_input
+            hint_text: "0"
+            halign: "right"
+            valign: "bottom"
+            size_hint_y: None
+            size_hint_x:None
+            #size_hint: 0.95,0.2
+            height:"125dp"
+            width:"330dp"
+            pos_hint: {"x":0.025,"y":0.6}
+            multiline: True
+            font_size: 59
+            mode: "rectangle"
+                    
+
+        MDGridLayout:
+            cols: 4
+            rows: 5
+            size_hint_y:0.55
+
+            MDFlatButton:
+                size_hint: (0.2,0.2)
+                font_size: 28
+                text: "%"
+                theme_text_color: "Custom"
+                text_color: 160/255, 96/255, 186/255, 1
+                on_release: app.math_sign("%")
+            MDFlatButton:
+                id: all_clear
+                size_hint: (0.2,0.2)
+                font_size: 28
+                text: "AC"
+                theme_text_color: "Custom"
+                text_color: 160/255, 96/255, 186/255, 1
+                on_press: app.clear()
+
+            MDFlatButton:
+                size_hint: (0.2,0.2)
+                font_size: 28
+                text: "<<"
+                theme_text_color: "Custom"
+                text_color: 160/255, 96/255, 186/255, 1
+                on_release: app.backspace()
+            MDFlatButton:
+                size_hint: (0.2,0.2)
+                font_size: 28
+                text: "/"
+                theme_text_color: "Custom"
+                text_color: 160/255, 96/255, 186/255, 1
+                on_release: app.math_sign("/")
+                
+
+
+            MDFlatButton:
+                size_hint: (0.2,0.2)
+                font_size: 28
+                text: "7"
+                on_press: app.button_press(7)
+            MDFlatButton:
+                size_hint: (0.2,0.2)
+                font_size: 28
+                text: "8"
+                on_press: app.button_press(8)
+            MDFlatButton:
+                size_hint: (0.2,0.2)
+                font_size: 28
+                text: "9"
+                on_press: app.button_press(9)
+            MDFlatButton:
+                size_hint: (0.2,0.2)
+                font_size: 28
+                text: "x"
+                theme_text_color: "Custom"
+                text_color: 160/255, 96/255, 186/255, 1
+                on_release: app.math_sign("*")
+                
+            
+
+            MDFlatButton:
+                size_hint: (0.2,0.2)
+                font_size: 28
+                text: "4"
+                on_press: app.button_press(4)
+            MDFlatButton:
+                size_hint: (0.2,0.2)
+                font_size: 28
+                text: "5"
+                on_press: app.button_press(5)
+            MDFlatButton:
+                size_hint: (0.2,0.2)
+                font_size: 28
+                text: "6"
+                on_press: app.button_press(6)
+            MDFlatButton:
+                size_hint: (0.2,0.2)
+                font_size: 28
+                text: "-"
+                theme_text_color: "Custom"
+                text_color: 160/255, 96/255, 186/255, 1
+                on_release: app.math_sign("-")
+
+
+            MDFlatButton:
+                size_hint: (0.2,0.2)
+                font_size: 28
+                text: "1"
+                on_press: app.button_press(1)
+            MDFlatButton:
+                size_hint: (0.2,0.2)
+                font_size: 28
+                text: "2"
+                on_press: app.button_press(2)
+            MDFlatButton:
+                size_hint: (0.2,0.2)
+                font_size: 28
+                text: "3"
+                on_press: app.button_press(3)
+            MDFlatButton:
+                size_hint: (0.2,0.2)
+                font_size: 28
+                text: "+"
+                theme_text_color: "Custom"
+                text_color: 160/255, 96/255, 186/255, 1
+                on_release:app.math_sign("+")
+
+
+            MDFlatButton:
+                size_hint: (0.2,0.2)
+                font_size: 28
+                text: "+/-"
+                on_release: app.change_sign()
+            MDFlatButton:
+                size_hint: (0.2,0.2)
+                font_size: 28
+                text: "0"
+                on_press: app.button_press(0)
+            MDFlatButton:
+                size_hint: (0.2,0.2)
+                font_size: 28
+                text: "."
+                on_release: app.dot()
+            MDFlatButton:
+                size_hint: (0.2,0.2)
+                font_size: 28
+                text: "="
+                md_bg_color: 173/255, 120/255, 186/255, 1
+                on_release: app.equals_to()
+                
+              
+
+
